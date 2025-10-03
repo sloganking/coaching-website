@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformational Coaching - Sean Logan King</title>
+    <meta name="description" content="Individual coaching for adults focused on intimacy skills, relationships, and wealth mindset. Break through limitations and create the life you thought was impossible.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #ffd140 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 60px 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #ffd140 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        section {
+            margin: 50px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .mission {
+            background: linear-gradient(135deg, rgba(240, 147, 251, 0.1) 0%, rgba(245, 87, 108, 0.1) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #f5576c;
+            font-size: 1.15rem;
+            line-height: 1.9;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.2);
+        }
+
+        .service-card h3 {
+            color: #f5576c;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .pricing-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .pricing-section h2 {
+            color: white;
+        }
+
+        .pricing-section h2::after {
+            background: white;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .pricing-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .price-label {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .price-note {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        .highlight-badge {
+            display: inline-block;
+            background: #ffd140;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .about {
+            background: #f8f9fa;
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .credentials {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .credentials h3 {
+            color: #f5576c;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .credentials ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .credentials li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .credentials li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #f5576c;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .process {
+            display: grid;
+            gap: 20px;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 20px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .step-content h3 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+
+        .step-content p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .boundaries {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .boundaries h3 {
+            color: #856404;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .boundaries p {
+            color: #856404;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(240, 147, 251, 0.1) 0%, rgba(255, 209, 64, 0.1) 100%);
+            border-radius: 15px;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 25px;
+        }
+
+        .cta-section h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #f5576c;
+            border: 2px solid #f5576c;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            background: #f5576c;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+            color: #888;
+        }
+
+        footer a {
+            color: #f5576c;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.4rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .process-step {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Transform Your Life</h1>
+            <p class="subtitle">Individual Coaching for Connection & Abundance</p>
+            <p class="tagline">
+                Break through limitations in intimacy, relationships, and wealth. Radically shift your identity from scarcity to possibility.
+            </p>
+        </header>
+
+        <section class="mission">
+            <p>
+                <strong>Have you been stuck in a rut?</strong> Living in a world of non-possibility, unsure of your worth, and disconnected from the intimacy and abundance you desire?
+            </p>
+            <p style="margin-top: 15px;">
+                I work as a belief and identity engineer. Together, we'll transform your relationship with yourself, with others, and with money—creating a life that you previously thought impossible.
+            </p>
+        </section>
+
+        <section>
+            <h2>What I Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🌟 Intimacy & Connection</h3>
+                    <p>
+                        Build confidence, social skills, and authentic intimacy. Move from isolation and scarcity to connection and abundance in your relationships.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <h3>💰 Wealth & Abundance</h3>
+                    <p>
+                        Transform your money mindset and habits. Design offers, understand pricing, and create financial abundance that reflects your true value.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <h3>🦋 Identity Engineering</h3>
+                    <p>
+                        Fundamentally shift who you are at the core. Develop a new identity that embodies possibility, self-worth, and radical self-acceptance.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <h2>Investment</h2>
+            <div class="pricing-container">
+                <div class="price-card">
+                    <div class="highlight-badge">FOUNDING CLIENT RATE</div>
+                    <div class="price-label">First 3 Months</div>
+                    <div class="price">$600<span style="font-size: 1.5rem;">/hr</span></div>
+                    <p class="price-note">
+                        Limited availability<br>
+                        90-120 minute sessions<br>
+                        Video or in-person
+                    </p>
+                </div>
+                <div class="price-card">
+                    <div class="price-label">Standard Rate</div>
+                    <div class="price">$900<span style="font-size: 1.5rem;">/hr</span></div>
+                    <p class="price-note">
+                        After founding period<br>
+                        90-120 minute sessions<br>
+                        Ongoing support available
+                    </p>
+                </div>
+            </div>
+            <p style="margin-top: 30px; font-size: 1.1rem; opacity: 0.95;">
+                Sessions are prepaid and scheduled at mutual convenience. Small roster of ~5 active clients ensures personalized attention.
+            </p>
+        </section>
+
+        <section>
+            <h2>How It Works</h2>
+            <div class="process">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Initial Conversation</h3>
+                        <p>We'll have a brief intro call (~30 minutes) to see if we're a good fit and discuss your goals.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Deeper Fit Discussion</h3>
+                        <p>A longer conversation (~90 minutes) to explore your situation in depth and ensure coaching is the right approach.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Intake & Agreement</h3>
+                        <p>Complete a brief questionnaire and sign the coaching agreement outlining scope, boundaries, and policies.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Begin Transformation</h3>
+                        <p>Schedule your first session and start the journey toward the life you've been waiting for.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <h2>About Sean Logan King</h2>
+            <p>
+                I've walked the path you're on. A few years ago, I was stuck in a seven-year dry spell, unsure of my worth, and living in a world that felt impossibly small. Through intentional work, training, and transformation, I've built a life of connection, intimacy, and abundance—and I'm here to help you do the same.
+            </p>
+            <p>
+                My coaching is grounded in proven methods, real-world experience, and a deep commitment to your growth.
+            </p>
+            
+            <div class="credentials">
+                <h3>Training & Background</h3>
+                <ul>
+                    <li>Somatica Institute Core Training (AASECT-approved CE provider)</li>
+                    <li>Currently in Somatica Advanced Training curriculum</li>
+                    <li>Expected eligibility for ABS Certified Sexologist registration (~6 months)</li>
+                    <li>Focused on intimacy skills, relationship coaching, and wealth mindset transformation</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="boundaries">
+            <h3>⚠️ Important: What This Is (And Isn't)</h3>
+            <p>
+                <strong>This is educational coaching</strong> focused on skills, behavior change, and personal growth. Sessions may include conversation, strategic planning, role-play, skills practice, and real-time feedback.
+            </p>
+            <p>
+                <strong>This is NOT:</strong> Psychotherapy • Medical care • Healthcare • Legal or tax advice • Investment advice • Escorting • Sexual services • Adult entertainment
+            </p>
+            <p>
+                <strong>Client Requirements:</strong> Adults 18+ only. Two-step screening process (~2 hours total). Coaching is not suitable for individuals experiencing acute crisis, suicidality, psychosis, or active substance dependence.
+            </p>
+            <p>
+                <strong>Policies:</strong> 48-hour cancellation notice required (see agreement for details) • Sessions prepaid via Stripe • Simple refund policy outlined in coaching agreement • Clear professional boundaries maintained throughout
+            </p>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to Begin?</h2>
+            <p style="font-size: 1.2rem; color: #555; margin-bottom: 10px;">
+                Let's explore what's possible when you invest in yourself.
+            </p>
+            <div class="cta-buttons">
+                <a href="mailto:logan@slkingco.com?subject=Coaching Inquiry" class="btn btn-primary">
+                    Get Started
+                </a>
+                <a href="sms:+18654568455&body=Hi, I'm interested in learning more about coaching" class="btn btn-secondary">
+                    Text: (865) 456-8455
+                </a>
+            </div>
+            <p style="margin-top: 25px; color: #666; font-size: 0.95rem;">
+                Email: <a href="mailto:logan@slkingco.com" style="color: #f5576c; text-decoration: none; font-weight: 600;">logan@slkingco.com</a>
+            </p>
+        </section>
+
+        <footer>
+            <p><strong>SLKing, LLC</strong></p>
+            <p style="margin-top: 10px;">
+                California Limited Liability Company
+            </p>
+            <p style="margin-top: 10px;">
+                <a href="mailto:logan@slkingco.com">Contact</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.85rem;">
+                © 2025 SLKing, LLC • All Rights Reserved
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
+
