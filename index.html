@@ -126,6 +126,50 @@
             color: var(--color-text);
             font-size: 1.5rem;
             cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(13, 10, 9, 0.98);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu a {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--color-accent);
+        }
+
+        .mobile-menu .nav-cta {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            margin-top: 20px;
         }
 
         /* Hero Section */
@@ -927,6 +971,10 @@
                 display: block;
             }
 
+            .mobile-menu {
+                display: flex;
+            }
+
             .nav-container {
                 padding: 0 25px;
             }
@@ -982,14 +1030,22 @@
         <div class="nav-container">
             <a href="#" class="nav-logo">Logan King</a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#pricing">Investment</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact" class="nav-cta">Get Started</a></li>
             </ul>
-            <button class="mobile-menu-btn" aria-label="Menu">&#9776;</button>
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">&#9776;</button>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#services">Services</a>
+        <a href="#pricing">Investment</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-cta">Get Started</a>
+    </div>
 
     <!-- Hero -->
     <section class="hero">
@@ -1412,7 +1468,24 @@
                         block: 'start'
                     });
                 }
+                // Close mobile menu if open
+                mobileMenu.classList.remove('active');
+                menuBtn.innerHTML = '&#9776;';
             });
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            // Toggle between hamburger and X
+            if (mobileMenu.classList.contains('active')) {
+                menuBtn.innerHTML = '&#10005;';
+            } else {
+                menuBtn.innerHTML = '&#9776;';
+            }
         });
     </script>
 </body>
